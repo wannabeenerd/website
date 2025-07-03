@@ -1,0 +1,73 @@
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+header, footer {
+  text-align: center;
+  padding: 1rem;
+}
+main {
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+}
+h1, h2, h3 {
+  color: #ffffff;
+}
+.button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #1e88e5;
+  color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.button:hover {
+  background: #1565c0;
+}
+.small {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+}
+.flag-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.flag-button {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.flag-button img {
+  width: 30px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+.contact-card {
+  background: #1e1e1e;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+}
+.language-switcher button {
+  background: none;
+  color: #bbbbbb;
+  border: none;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+.language-switcher button:hover {
+  color: white;
+}
