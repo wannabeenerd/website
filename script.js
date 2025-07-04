@@ -43,7 +43,7 @@ function selectState(data, code) {
     contacts.innerHTML += `
       <div class='contact-card'>
         <p>${p.title} ${p.lastName}</p>
-        <p><a href='mailto:${p.email}?subject=${encodeURIComponent("Rücküberstellung Maja T.")}&body=${encodeURIComponent(p.mailText)}'>${p.email}</a></p>
+        <p><a href='mailto:${p.email}?subject=Rücküberstellung%20Maja%20T.&body=${p.mailText}'>${p.email}</a></p>
         <p><a href='tel:${p.phone}'>${p.phone}</a></p>
       </div>
     `;
