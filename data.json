@@ -1,0 +1,18 @@
+{
+  "NRW": [
+    {
+      "name": "Herr Muster",
+      "email": "muster@bundestag.de",
+      "phone": "+49123456789"
+    }
+    // weitere Abgeordnete
+  ],
+  "BY": [
+    {
+      "name": "Frau Beispiel",
+      "email": "beispiel@bundestag.de",
+      "phone": "+49876543210"
+    }
+    // weitere Abgeordnete
+  ]
+}
