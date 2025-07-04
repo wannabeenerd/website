@@ -1,18 +1,23 @@
 {
-  "NRW": [
+  "NW": [
     {
-      "name": "Herr Muster",
-      "email": "muster@bundestag.de",
-      "phone": "+49123456789"
+      "title": "Herr",
+      "lastName": "Mustermann",
+      "email": "mustermann@bundestag.de",
+      "phone": "+492211234567",
+      "mailText": "Sehr%20geehrter%20Herr%20Mustermann%2C%0D%0A%0D%0AMaja%20T.%20ist%20eine%20nicht-binäre%20Person%20mit%20deutscher%20Staatsangehörigkeit...%0D%0A%0D%0AIch%20hoffe%2C%20mein%20Anliegen%20stößt%20bei%20Ihnen%20auf%20ein%20offenes%20Ohr%20und%20ein%20offenes%20Herz.%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A[Vorname%20Nachname]"
     }
-    // weitere Abgeordnete
+    // vier weitere Einträge für NRW hier einfügen
   ],
   "BY": [
     {
-      "name": "Frau Beispiel",
+      "title": "Frau",
+      "lastName": "Beispiel",
       "email": "beispiel@bundestag.de",
-      "phone": "+49876543210"
+      "phone": "+498912345678",
+      "mailText": "Sehr%20geehrte%20Frau%20Beispiel%2C%0D%0A%0D%0AMaja%20T.%20ist%20eine%20nicht-binäre%20Person%20mit%20deutscher%20Staatsangehörigkeit...%0D%0A%0D%0AIch%20hoffe%2C%20mein%20Anliegen%20stößt%20bei%20Ihnen%20auf%20ein%20offenes%20Ohr%20und%20ein%20offenes%20Herz.%0D%0A%0D%0AMit%20freundlichen%20Grüßen%0D%0A[Vorname%20Nachname]"
     }
-    // weitere Abgeordnete
+    // vier weitere Einträge für BY hier einfügen
   ]
+  // alle weiteren Bundesländer mit echten Daten im selben Format ergänzen
 }
