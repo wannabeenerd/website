@@ -1,41 +1,49 @@
 const states = [
-  { name: "Nordrhein-Westfalen", code: "NRW" },
-  { name: "Bayern", code: "BY" }
-  // weitere Bundesländer hier
+  { name: "Baden-Württemberg", code: "BW" },
+  { name: "Bayern", code: "BY" },
+  { name: "Berlin", code: "BE" },
+  { name: "Brandenburg", code: "BB" },
+  { name: "Bremen", code: "HB" },
+  { name: "Hamburg", code: "HH" },
+  { name: "Hessen", code: "HE" },
+  { name: "Mecklenburg-Vorpommern", code: "MV" },
+  { name: "Niedersachsen", code: "NI" },
+  { name: "Nordrhein-Westfalen", code: "NW" },
+  { name: "Rheinland-Pfalz", code: "RP" },
+  { name: "Saarland", code: "SL" },
+  { name: "Sachsen", code: "SN" },
+  { name: "Sachsen-Anhalt", code: "ST" },
+  { name: "Schleswig-Holstein", code: "SH" },
+  { name: "Thüringen", code: "TH" }
 ];
 
-const data = {
-  NRW: [
-    { name: "Herr Muster", email: "muster@bundestag.de", phone: "+49123456789" },
-    // weitere Abgeordnete
-  ],
-  BY: [
-    { name: "Frau Beispiel", email: "beispiel@bundestag.de", phone: "+49876543210" },
-    // weitere Abgeordnete
-  ]
-};
+async function loadData() {
+  const response = await fetch('data.json');
+  const data = await response.json();
+  renderStates(data);
+}
 
-function renderStates() {
+function renderStates(data) {
   const container = document.getElementById("states");
   states.forEach(s => {
     const btn = document.createElement("div");
     btn.className = "flag-button";
     btn.innerHTML = `<span>Abgeordnete aus ${s.name}</span>`;
-    btn.onclick = () => selectState(s.code);
+    btn.onclick = () => selectState(data, s.code);
     container.appendChild(btn);
   });
 }
 
-function selectState(code) {
-  const list = data[code];
+function selectState(data, code) {
+  const list = data[code] || [];
   const random = list.sort(() => 0.5 - Math.random()).slice(0, 5);
   const contacts = document.getElementById("contacts");
   contacts.innerHTML = "<h3>Kontakte</h3>";
   random.forEach(p => {
     contacts.innerHTML += `
       <div class='contact-card'>
-        <p>${p.name}</p>
-        <p><a href='mailto:${p.email}?subject=Rücküberstellung%20Maja%20T.&body=Sehr%20geehrte/r%20${p.name},%0D%0A%0D%0A[Hier%20steht%20der%20Mailtext%20aus%20der%20Vorlage]'>${p.email}</a></p>
+        <p>${p.title} ${p.lastName}</p>
+        <p><a href='mailto:${p.email}?subject=${encodeURIComponent("Rücküberstellung Maja T.")}&body=${encodeURIComponent(p.mailText)}'>${p.email}</a></p>
         <p><a href='tel:${p.phone}'>${p.phone}</a></p>
       </div>
     `;
@@ -43,7 +51,7 @@ function selectState(code) {
 }
 
 function showMore() {
-  alert("Weitere Optionen werden hier angezeigt.");
+  alert("Hier werden weitere 10 Verantwortliche + Postanschriften angezeigt (Implementierung folgt).“);
 }
 
-renderStates();
+loadData();
